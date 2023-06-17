@@ -1,1 +1,176 @@
 /* You can add global styles to this file, and also import other style files */
+
+//Font Family
+@import url('https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap');
+
+*{
+    font-family: 'Gelasio', serif;
+}
+
+/* FFFFFF */
+$color-white: #ffffff;
+
+/* F8F9FA */
+$color-gray-100: #f8f9fa;
+
+/* E9ECEF */
+$color-gray-200: #e9ecef;
+
+/* DEE2E6 */
+$color-gray-300: #dee2e6;
+
+/* CED4DA */
+$color-gray-400: #ced4da;
+
+/* ADB5BD */
+$color-gray-500: #adb5bd;
+
+/* 6C757D */
+$color-gray-600: #6c757d;
+
+/* 495057 */
+$color-gray-700: #495057;
+
+/* 343A40 */
+$color-gray-800: #343a40;
+
+/* 212529 */
+$color-gray-900: #212529;
+
+/* FFD9BF */
+$color-primary-200: #ffd9bf;
+@mixin text-style-button() {
+	font-size: 16px;
+    font-family: 'Gelasio', serif;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-heading-h-1() {
+	font-size: 56px;
+	font-family: 'Gelasio', serif;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-heading-h-2() {
+	font-size: 48px;
+	font-family: 'Gelasio', serif;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-heading-h-3() {
+	font-size: 40px;
+	font-family: 'Gelasio', serif;
+	font-weight: 700;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-heading-h-4() {
+	font-size: 32px;
+	font-family: 'Gelasio', serif;
+	font-weight: 600;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-heading-h-5() {
+	font-size: 24px;
+	font-family: 'Gelasio', serif;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-heading-h-6() {
+	font-size: 20px;
+	font-family: 'Gelasio', serif;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-caption-small() {
+	font-size: 12px;
+	font-family: 'Gelasio', serif;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-caption-large() {
+	font-size: 24px;
+	font-family: 'Gelasio', serif;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+@mixin text-style-paragraphs-small() {
+	font-size: 14px;
+	font-family: 'Gelasio', serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-paragraphs-large() {
+	font-size: 24px;
+	font-family: 'Gelasio', serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-paragraphs-regular-regular() {
+	font-size: 16px;
+	font-family: 'Gelasio', serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-paragraphs-regular-medium() {
+	font-size: 16px;
+	font-family: 'Gelasio', serif;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-paragraphs-medium-regular() {
+	font-size: 18px;
+	font-family: 'Gelasio', serif;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-paragraphs-medium-medium() {
+	font-size: 18px;
+	font-family: 'Gelasio', serif;
+	font-weight: 500;
+	font-style: normal;
+	line-height: 150%;
+	text-decoration: none;
+	text-transform: none;
+}
