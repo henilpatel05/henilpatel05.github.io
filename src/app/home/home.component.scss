@@ -39,7 +39,27 @@ margin: 0;
 }
 
 .drawer{
-    mix-blend-mode: soft-light;
+    mix-blend-mode: lighten;
     backdrop-filter: blur(2px);
+    // z-index: 1;
     margin-top: auto; /* Move the .drawer to the bottom */
+}
+
+.app {
+	width: 20%;
+	cursor: pointer;
+	animation: up 1.5s infinite alternate;
+    -webkit-animation: up 1.5s infinite  alternate;
+}
+
+@keyframes up {
+    0% { top: 0; opacity: 0.1; transform: translateY(0); }
+	100% { top: 0; opacity: 1; transform: translateY(-10px);}
+}
+
+
+@-webkit-keyframes up {
+
+    0% { top: 0; opacity: 0.1; transform: translateY(0); }
+	100% { top: 0; opacity: 1; transform: translateY(-10px);}
 }
