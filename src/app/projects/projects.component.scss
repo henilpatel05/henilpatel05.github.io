@@ -1,0 +1,21 @@
+@import "../../styles.scss";
+
+.hero{
+    background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center; /* Set the path to your background image */
+    background-color: $dark-background;
+    mix-blend-mode: screen; /* Apply the mix-blend-mode property */
+    height: 100vh; /* Set the initial height to 100% of viewport height */
+    // display: flex;
+    // align-items: center; /* Vertically center the content */
+    // flex-direction: column;
+    // padding-top: 40px;
+    margin-top: -40px;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.drawer{
+    mix-blend-mode: soft-light;
+    backdrop-filter: blur(2px);
+    margin-top: auto; /* Move the .drawer to the bottom */
+}

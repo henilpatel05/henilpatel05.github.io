@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {faLinkedinIn} from '@fortawesome/free-brands-svg-icons';
 import {faDribbble} from '@fortawesome/free-brands-svg-icons';
 import {faPaperPlane} from '@fortawesome/free-regular-svg-icons';
@@ -21,5 +22,7 @@ export class AppComponent {
   faFaceSmile = faFaceSmile;
   faWindowRestore = faWindowRestore;
   faFileLines = faFileLines;
+
+  constructor(public router:Router) { }
 
 }

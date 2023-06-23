@@ -1,4 +1,4 @@
-<section>
+<header><section>
 <nav>
   <a href="https://www.npmjs.com/package/@fortawesome/angular-fontawesome">
     <img class="logo nav" src="../assets/logo.svg">
@@ -9,7 +9,7 @@
         <fa-icon [icon]="faFaceSmile" class="icon-color" [fixedWidth]="true"></fa-icon>
     </li>
   </a>
-    <a href="#">
+    <a [routerLink]="['/projects']" routerLinkActive="router-link-active" >
     <li class="nav-item">
         <fa-icon [icon]="faWindowRestore" class="icon-color" [fixedWidth]="true"></fa-icon>
       </li>
@@ -38,19 +38,8 @@
 
 </nav>
 </section>
-
-<section class="hero">
-  <div class="intro-main"> 
-    
-    <p class="intro">
-      <label class="greeting">
-        Greetings 👋 <br>
-      </label>
-      I'm versatile <span style="color: #63E6BE;">UX Designer</span>,<br> driving innovation through <br>user-centered design & delivering intuitive experiences for
-      business growth.
-    </p>
-  </div>
-  <div class="drawer center">
-    <img src="../assets/Drawer.svg">
-  </div>
-</section>
+</header>
+<div>
+  <router-outlet></router-outlet>
+</div>
+<footer></footer>
