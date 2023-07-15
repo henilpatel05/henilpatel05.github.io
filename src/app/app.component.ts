@@ -6,7 +6,7 @@ import {faPaperPlane} from '@fortawesome/free-regular-svg-icons';
 import {faFaceSmile} from '@fortawesome/free-regular-svg-icons';
 import {faWindowRestore} from '@fortawesome/free-regular-svg-icons';
 import {faFileLines} from '@fortawesome/free-regular-svg-icons';
-
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +14,7 @@ import {faFileLines} from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Henil Kajavadra';
+  title = 'My App';
 
   faLinkedinIn = faLinkedinIn;
   faDribbble = faDribbble;
@@ -22,6 +22,7 @@ export class AppComponent {
   faFaceSmile = faFaceSmile;
   faWindowRestore = faWindowRestore;
   faFileLines = faFileLines;
+  faArrowRight = faArrowRight;
 
   constructor(public router:Router) { }
 
