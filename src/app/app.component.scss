@@ -1,6 +1,6 @@
 @import "../../src/styles.scss";
 
-.nav{
+.menu{
     z-index: 1;
 }
 
@@ -19,9 +19,12 @@
     margin-left: 12px;
     display: none;
     transition: ease-in-out all .4s;
+    // @include tablet{}
+    // @include mobile{}
 }
 
 .nav-item:hover .nav-title{
     display: block;
     transition: ease-in-out all .4s;
+    @include mobile{display: none;}
 }

@@ -51,6 +51,29 @@ $primary-200: #ffd9bf;
 //Dark-background
 $dark-background: $gray-900;
 
+ 
+  /* Mobile styles */
+  @mixin mobile() {
+	@media (max-width: 767px) {
+	  @content;
+	}
+  }
+
+   /* Tablet styles */
+   @mixin tablet() {
+	@media (min-width: 768px) and (max-width: 1023px) {
+	  @content;
+	}
+  }
+
+  /* Desktop styles */
+@mixin desktop() {
+	@media (min-width: 1024px) {
+	  @content;
+	}
+  }
+  
+
 @mixin button() {
 	font-size: 16px;
     font-family: 'Gelasio', serif;
@@ -68,6 +91,14 @@ $dark-background: $gray-900;
 	line-height: 150%;
 	text-decoration: none;
 	text-transform: none;
+	/*media query*/	
+	  @include tablet {
+		font-size: 40px;
+	  }
+	
+	  @include mobile {
+		font-size: 28px;
+	  }
 }
 @mixin heading-h2() {
 	font-size: 48px;
@@ -77,6 +108,14 @@ $dark-background: $gray-900;
 	line-height: 150%;
 	text-decoration: none;
 	text-transform: none;
+	/*media query*/	
+	@include tablet {
+		font-size: 32px;
+	  }
+	
+	  @include mobile {
+		font-size: 24px;
+	  }
 }
 @mixin heading-h3() {
 	font-size: 40px;
@@ -86,6 +125,14 @@ $dark-background: $gray-900;
 	line-height: 150%;
 	text-decoration: none;
 	text-transform: none;
+	/*media query*/	
+	@include tablet {
+		font-size: 32px;
+	  }
+	
+	  @include mobile {
+		font-size: 20px;
+	  }
 }
 @mixin heading-h4() {
 	font-size: 32px;
@@ -95,6 +142,14 @@ $dark-background: $gray-900;
 	line-height: 150%;
 	text-decoration: none;
 	text-transform: none;
+	/*media query*/	
+	@include tablet {
+		font-size: 24px;
+	  }
+	
+	  @include mobile {
+		font-size: 18px;
+	  }
 }
 @mixin heading-h5() {
 	font-size: 24px;
@@ -104,6 +159,14 @@ $dark-background: $gray-900;
 	line-height: 150%;
 	text-decoration: none;
 	text-transform: none;
+	/*media query*/	
+	@include tablet {
+		font-size: 20px;
+	  }
+	
+	  @include mobile {
+		font-size: 16px;
+	  }
 }
 @mixin heading-h6() {
 	font-size: 20px;
@@ -113,6 +176,14 @@ $dark-background: $gray-900;
 	line-height: 150%;
 	text-decoration: none;
 	text-transform: none;
+	/*media query*/	
+	@include tablet {
+		font-size: 18px;
+	  }
+	
+	  @include mobile {
+		font-size: 14px;
+	  }
 }
 @mixin caption-small() {
 	font-size: 12px;
@@ -133,6 +204,9 @@ $dark-background: $gray-900;
 	text-decoration: none;
 	text-transform: capitalize;
 	letter-spacing: 0.02ch;
+	  @include mobile {
+		font-size: 20px;
+	  }
 }
 @mixin paragraphs-small() {
 	font-size: 14px;
@@ -153,6 +227,13 @@ $dark-background: $gray-900;
 	text-decoration: none;
 	text-transform: none;
 	letter-spacing: 0.02ch;
+	@include tablet {
+		font-size: 22px;
+	  }
+	
+	  @include mobile {
+		font-size: 20px;
+	  }
 }
 @mixin paragraphs-regular-regular() {
 	font-size: 16px;
@@ -308,8 +389,11 @@ $dark-background: $gray-900;
 }
 
 @mixin container() {
-    max-width: 1440px; /* Set the maximum width of the container */
+    // max-width: 1440px; /* Set the maximum width of the container */
     padding: 0 10vw; /* Set the container margin using viewport units */
+
+	@include tablet{padding: 0 6vw;}
+    @include mobile{padding: 0 4vw;}
   }
 
 section{
@@ -333,6 +417,25 @@ nav{
         list-style: none;
         position: fixed;
         right: 40px;
+
+		@include tablet{
+				right: 0;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				display: flex;
+				background: rgba(255, 255, 255, 0.1);
+    			border: 1px solid rgba(255, 255, 255, 0.2);
+		  }
+		  @include mobile {
+			right: 0;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				display: flex;
+				background: rgba(255, 255, 255, 0.1);
+    			border: 1px solid rgba(255, 255, 255, 0.2);
+		  }
     }
 }
 
@@ -353,14 +456,33 @@ nav{
     backdrop-filter: blur(5.5px);
     border-radius: 16px;
     margin-bottom: 16px;
+
+	@include tablet{
+		font-size: 22px;
+		background: none;
+    border: none;
+    backdrop-filter: blur(0px);
+    border-radius: 0px;
+	margin-bottom: 0px;
+	padding: 16px 16px;
+  }
+  @include mobile {
+	font-size: 20px;
+	background: none;
+    border: none;
+    backdrop-filter: blur(0px);
+    border-radius: 0px;
+	margin-bottom: 0px;
+	padding: 16px 16px;
+  }
 }
 
-.section{
-	background: rgba(0, 0, 0, 0.5) url('../src/assets/fog.png') no-repeat center center; /* Set the path to your background image */
-    background-color: $dark-background;
-    mix-blend-mode: screen; /* Apply the mix-blend-mode property */
-    height: 100vh; /* Set the initial height to 100% of viewport height */
-}
+// .section{
+// 	background: rgba(0, 0, 0, 0.5) url('../src/assets/fog.png') no-repeat center center; /* Set the path to your background image */
+//     background-color: $dark-background;
+//     mix-blend-mode: screen; /* Apply the mix-blend-mode property */
+//     height: 100vh; /* Set the initial height to 100% of viewport height */
+// }
 
 .btn-primary{
 	@include button;
