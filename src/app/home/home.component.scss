@@ -74,25 +74,67 @@ margin: 0;
 }
 
 .projects{
+    background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center; /* Set the path to your background image */
+    background-color: $dark-background;
+    background-size: cover;
+    mix-blend-mode: screen; /* Apply the mix-blend-mode property */
     display: flex;
+    flex-direction: column;
+    gap: 56px;
     align-items: center;
-    // margin-top: -40px;
+    // margin: 72px 0px 72px 0px;
+    padding-top: 72px;
+    padding-bottom: 72px;
+
+    @include mobile {
+		flex-direction: column;
+        gap: 40px;
+	  }
+    
+      @include tablet {
+		flex-direction: column;
+        gap: 48px;
+	  }
 
     .project-item{
         background: $gray-100;
         border-radius: 24px;
         overflow: hidden;
         // height: 75vh;
+        @include mobile {
+            border-radius: 16px;
+          }
+
+          @include tablet {
+            border-radius: 20px;
+          }
 
         .project-details{
-            max-width: 70%;
+            width: 70%;
+
+            @include mobile {
+                width: auto;
+                padding: 0px 16px 16px 16px;
+                align-items: flex-start; 
+                display: block;
+              }
+
+              @include tablet {
+                width: auto;
+                padding: 0px 24px 24px 24px;
+                align-items: flex-start; 
+                display: block;
+              }
 
             .chip{
                 padding: 8px 16px;
                 justify-content: center;
                 align-items: center;
                 border-radius: 8px;
-                background: $gray-200
+                background: $gray-200;
+                @include mobile {
+                    border-radius: 6px;
+                  }
             }
     
             .heading-h3{
@@ -114,7 +156,15 @@ margin: 0;
             object-fit: cover;
         }
     }
+
+    @include desktop {
+        /* Create the zig-zag pattern */
+        .project-item:nth-child(odd) .project-details {
+            order: 2;
+      }
+      }     
 }
+
 
 
 
