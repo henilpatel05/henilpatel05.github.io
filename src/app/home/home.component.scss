@@ -1,26 +1,27 @@
 @import "../../styles.scss";
 
 
-.intro-main{
-//    margin-top: auto; /* Move the .intro-main content to the center vertically */
-   height: 96%;
-   display: grid;
-   align-items: center;
+.intro-main {
+  //    margin-top: auto; /* Move the .intro-main content to the center vertically */
+  height: 96%;
+  display: grid;
+  align-items: center;
 }
 
-.greeting{
-    @include heading-h5;
-    color: $gray-300;
-    margin-bottom: 24px;
-    opacity: 0.7;
+.greeting {
+  @include heading-h5;
+  color: $gray-300;
+  margin-bottom: 24px;
+  opacity: 0.7;
 }
 
-.intro{
-    @include heading-h1;
-    color: $white;
-width: 80%;
-margin: 0;
-@include tablet {
+.intro {
+  @include heading-h1;
+  color: $white;
+  width: 80%;
+  margin: 0;
+
+  @include tablet {
     width: 90%;
   }
 
@@ -30,142 +31,340 @@ margin: 0;
 }
 
 
-.hero{
-    background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center; /* Set the path to your background image */
-    background-color: $dark-background;
-    background-size: cover;
-    mix-blend-mode: screen; /* Apply the mix-blend-mode property */
-    height: 100vh; /* Set the initial height to 100% of viewport height */
-    margin-top: -40px;
-    justify-content: space-between;
-    z-index: 2;
+.hero {
+  background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center;
+  /* Set the path to your background image */
+  background-color: $dark-background;
+  background-size: cover;
+  mix-blend-mode: screen;
+  /* Apply the mix-blend-mode property */
+  height: 100vh;
+  /* Set the initial height to 100% of viewport height */
+  margin-top: -40px;
+  justify-content: space-between;
+  z-index: 2;
 }
 
-.drawer{
-    mix-blend-mode: lighten;
-    backdrop-filter: blur(2px);
-    // z-index: 1;
-    margin-top: auto; /* Move the .drawer to the bottom */
+.drawer {
+  mix-blend-mode: lighten;
+  backdrop-filter: blur(2px);
+  // z-index: 1;
+  margin-top: auto;
+  /* Move the .drawer to the bottom */
 }
 
 .app {
-	width: 80%;
-	cursor: pointer;
-	animation: up 1.5s infinite alternate;
-    -webkit-animation: up 1.5s infinite  alternate;
-    @include tablet{
-        display: none;
-      }
-      @include mobile {
-        display: none;
-      }
+  width: 80%;
+  cursor: pointer;
+  animation: up 1.5s infinite alternate;
+  -webkit-animation: up 1.5s infinite alternate;
+
+  @include tablet {
+    display: none;
+  }
+
+  @include mobile {
+    display: none;
+  }
 }
 
 @keyframes up {
-    0% { top: 0; opacity: 0.1; transform: translateY(0); }
-	100% { top: 0; opacity: 1; transform: translateY(-10px);}
+  0% {
+    top: 0;
+    opacity: 0.1;
+    transform: translateY(0);
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+    transform: translateY(-10px);
+  }
 }
 
 
 @-webkit-keyframes up {
 
-    0% { top: 0; opacity: 0.1; transform: translateY(0); }
-	100% { top: 0; opacity: 1; transform: translateY(-10px);}
+  0% {
+    top: 0;
+    opacity: 0.1;
+    transform: translateY(0);
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
+    transform: translateY(-10px);
+  }
 }
 
-.projects{
-    background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center; /* Set the path to your background image */
-    background-color: $dark-background;
-    background-size: cover;
-    mix-blend-mode: screen; /* Apply the mix-blend-mode property */
-    display: flex;
+
+//Project section starts from here...
+
+.projects {
+  background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center;
+  /* Set the path to your background image */
+  background-color: $dark-background;
+  background-size: cover;
+  mix-blend-mode: screen;
+  /* Apply the mix-blend-mode property */
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  align-items: center;
+  // margin: 72px 0px 72px 0px;
+  padding-top: 72px;
+  padding-bottom: 72px;
+
+  @include mobile {
     flex-direction: column;
-    gap: 56px;
-    align-items: center;
-    // margin: 72px 0px 72px 0px;
-    padding-top: 72px;
-    padding-bottom: 72px;
+    gap: 40px;
+  }
 
+  @include tablet {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .project-item {
+    background: $gray-100;
+    border-radius: 24px;
+    overflow: hidden;
+
+    // height: 75vh;
     @include mobile {
-		flex-direction: column;
-        gap: 40px;
-	  }
-    
-      @include tablet {
-		flex-direction: column;
-        gap: 48px;
-	  }
-
-    .project-item{
-        background: $gray-100;
-        border-radius: 24px;
-        overflow: hidden;
-        // height: 75vh;
-        @include mobile {
-            border-radius: 16px;
-          }
-
-          @include tablet {
-            border-radius: 20px;
-          }
-
-        .project-details{
-            width: 70%;
-
-            @include mobile {
-                width: auto;
-                padding: 0px 16px 16px 16px;
-                align-items: flex-start; 
-                display: block;
-              }
-
-              @include tablet {
-                width: auto;
-                padding: 0px 24px 24px 24px;
-                align-items: flex-start; 
-                display: block;
-              }
-
-            .chip{
-                padding: 8px 16px;
-                justify-content: center;
-                align-items: center;
-                border-radius: 8px;
-                background: $gray-200;
-                @include mobile {
-                    border-radius: 6px;
-                  }
-            }
-    
-            .heading-h3{
-                @include heading-h3;
-                color: $gray-900;
-            }
-            
-            .project-description{
-                @include paragraphs-medium-regular;
-                color: $gray-800;
-            }
-        }
-
-        .project-img{
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+      border-radius: 16px;
     }
 
-    @include desktop {
-        /* Create the zig-zag pattern */
-        .project-item:nth-child(odd) .project-details {
-            order: 2;
+    @include tablet {
+      border-radius: 20px;
+    }
+
+    .project-details {
+      width: 70%;
+
+      @include mobile {
+        width: auto;
+        padding: 0px 16px 16px 16px;
+        align-items: flex-start;
+        display: block;
       }
-      }     
+
+      @include tablet {
+        width: auto;
+        padding: 0px 24px 24px 24px;
+        align-items: flex-start;
+        display: block;
+      }
+
+      .chip {
+        padding: 8px 16px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        background: $gray-200;
+
+        @include mobile {
+          border-radius: 6px;
+        }
+      }
+
+      .heading-h3 {
+        @include heading-h3;
+        color: $gray-900;
+      }
+
+      .project-description {
+        @include paragraphs-medium-regular;
+        color: $gray-800;
+      }
+    }
+
+    .project-img {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include desktop {
+
+    /* Create the zig-zag pattern */
+    .project-item:nth-child(odd) .project-details {
+      order: 2;
+    }
+  }
 }
 
 
 
 
 
+// //Reviews section starts from here...
+.review {
+  background-color: $gray-100;
+  height: 100vh;
+  padding: 72px auto;
+
+  h1 {
+    @include heading-h1();
+    width: 825px;
+    color: $gray-900;
+    display: inline-block;
+  }
+
+  .testimonial {
+    .row-review {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 51px;
+    }
+
+    .client-img {
+      img {
+        width: 192px;
+        height: 192px;
+        border-radius: 192px;
+      }
+    }
+
+    .client-review {
+      @include paragraphs-large();
+      color: $gray-900
+    }
+
+    .client-name {
+      @include heading-h5();
+      color: black;
+    }
+
+    .client-role {
+      @include caption-large();
+      color: $gray-600;
+    }
+  }
+}
+
+
+// .review {
+//   background-color: $gray-100;
+//   height: 100vh;
+
+//   .testimonial {
+//     .row-review {
+//       display: inline-flex;
+//       align-items: flex-start;
+//       gap: 51px;
+//     }
+//   }
+
+//   .review-header {
+//     width: 825px;
+//     color: $gray-900;
+//     // padding-top: 333px;
+//   }
+
+//   .client-img {
+//     img {
+//       width: 192px;
+//       height: 192px;
+//       border-radius: 192px;
+//     }
+
+//     // background: url(../../assets/project/cycle.png), lightgray 50% / cover no-repeat;
+//   }
+
+//   .client-review {
+//     .paragraphs-large {
+//       color: $gray-900;
+//       width: 705px;
+//     }
+
+//     .caption-large {
+//       color: $gray-600;
+//     }
+//   }
+// }
+
+
+//Footer styles
+
+.footer {
+  background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center;
+  /* Set the path to your background image */
+  background-color: $dark-background;
+  background-size: cover;
+  mix-blend-mode: screen;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* Horizontally center the content */
+  align-items: center;
+  /* Vertically center the content */
+
+  .footer-content {
+    flex: 1; /* Allow it to grow and take available vertical space */
+    display: flex; /* Enable flexbox for footer-cta */
+  flex-direction: column; /* Stack footer-cta elements vertically */
+  justify-content: center; /* Vertically center footer-cta content */
+  }
+
+  .pre-title {
+    @include heading-h4();
+    color: $white;
+  }
+
+  .cta-title {
+    font-family: Gelasio;
+    font-size: 150px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    color: $white;
+
+    @include mobile {
+      font-size: 48px;
+    }
+    @include tablet {
+      font-size: 80px;
+    }
+  }
+
+  .footer-bottombar {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 24px;
+    border-radius: 24px;
+    border: 2px solid rgba(255, 255, 255, 0.50);
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(5.5px);
+    margin-bottom: 20px; /* Add padding for spacing */
+
+    p{
+      @include paragraphs-regular-regular();
+      color: $white;
+      line-height: 200%;
+
+      @include mobile {
+        @include caption-small();
+      }
+    }
+
+    img{
+      height: 40px;
+      width: auto;
+    }
+    @include tablet {
+      margin-bottom: 80px;
+    }
+    @include mobile {
+      margin-bottom: 22%;
+      flex-direction: column;
+    }
+  }
+}
