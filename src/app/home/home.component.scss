@@ -206,87 +206,115 @@
 .review {
   background-color: $gray-100;
   height: 100vh;
-  padding: 72px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 
   h1 {
     @include heading-h1();
     width: 825px;
     color: $gray-900;
     display: inline-block;
+
+    @include mobile {
+      max-width: 100%;
+    }
+    @include tablet {
+      max-width: 100%;
+    }
   }
 
-  .testimonial {
-    .row-review {
-      display: inline-flex;
-      align-items: flex-start;
-      gap: 51px;
+  .review-content {
+
+    @include mobile {
+      max-width: 100%;
+    }
+    @include tablet {
+      max-width: 100%;
     }
 
-    .client-img {
-      img {
-        width: 192px;
-        height: 192px;
-        border-radius: 192px;
+    .quote {
+      position: absolute;
+      opacity: 0.05;
+      width: auto;
+      height: 25%;
+      transform: scaleY(-1);
+      right: 30%;
+      top: 8%; /* Adjust the top offset as needed */
+
+      @include tablet {
+        width: auto;
+        height: 15%;
+        right: 10%;
+        top: 24%;
+      }
+
+      @include mobile {
+        width: auto;
+        height: 15%;
+        right: 6%;
+        top: 18%;
       }
     }
 
-    .client-review {
-      @include paragraphs-large();
-      color: $gray-900
-    }
+    .testimonial {
+      width: 80%;
+      float: left;
+      
+      @include tablet {
+        width: 100%;
+      }
 
-    .client-name {
-      @include heading-h5();
-      color: black;
-    }
+      @include mobile {
+        width: 100%;
+        overflow-wrap: normal;
+       }
 
-    .client-role {
-      @include caption-large();
-      color: $gray-600;
+      .review-header {
+        color: $gray-900;
+      }
+
+      .row-review {
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 51px;
+
+        .client-img {
+          img {
+            width: 192px;
+            height: 192px;
+            border-radius: 192px;
+
+            @include tablet {
+              width: 164px;
+              height: 164px;
+              border-radius: 192px;
+            }
+          }
+          @include mobile {
+            display: none;
+           }
+        }
+
+        .client-review {
+          @include paragraphs-large();
+          color: $gray-900
+        }
+    
+        .client-name {
+          @include heading-h5();
+          color: black;
+        }
+    
+        .client-role {
+          @include paragraphs-medium-regular();
+          color: $gray-600;
+        }
+      }
     }
   }
 }
-
-
-// .review {
-//   background-color: $gray-100;
-//   height: 100vh;
-
-//   .testimonial {
-//     .row-review {
-//       display: inline-flex;
-//       align-items: flex-start;
-//       gap: 51px;
-//     }
-//   }
-
-//   .review-header {
-//     width: 825px;
-//     color: $gray-900;
-//     // padding-top: 333px;
-//   }
-
-//   .client-img {
-//     img {
-//       width: 192px;
-//       height: 192px;
-//       border-radius: 192px;
-//     }
-
-//     // background: url(../../assets/project/cycle.png), lightgray 50% / cover no-repeat;
-//   }
-
-//   .client-review {
-//     .paragraphs-large {
-//       color: $gray-900;
-//       width: 705px;
-//     }
-
-//     .caption-large {
-//       color: $gray-600;
-//     }
-//   }
-// }
 
 
 //Footer styles
@@ -349,9 +377,11 @@
     left: 0;
     transition: width 0.3s ease-in-out;
   }
+
   a:hover::after {
     width: 100%;
   }
+
   /*end of Animation for the line-through effect */
 
   .footer-bottombar {
