@@ -301,15 +301,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* Horizontally center the content */
   align-items: center;
-  /* Vertically center the content */
 
   .footer-content {
-    flex: 1; /* Allow it to grow and take available vertical space */
-    display: flex; /* Enable flexbox for footer-cta */
-  flex-direction: column; /* Stack footer-cta elements vertically */
-  justify-content: center; /* Vertically center footer-cta content */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .pre-title {
@@ -323,15 +321,38 @@
     font-style: normal;
     font-weight: 600;
     line-height: 150%;
-    color: $white;
+    color: $gray-600;
+    text-decoration: none;
+    position: relative;
 
     @include mobile {
       font-size: 48px;
     }
+
     @include tablet {
       font-size: 80px;
     }
   }
+
+  a:hover {
+    color: $gray-100;
+  }
+
+  /* Animation for the line-through effect */
+  a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 16px;
+    background-color: $gray-700;
+    bottom: 50%;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+  }
+  a:hover::after {
+    width: 100%;
+  }
+  /*end of Animation for the line-through effect */
 
   .footer-bottombar {
     display: inline-flex;
@@ -343,9 +364,10 @@
     border: 2px solid rgba(255, 255, 255, 0.50);
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(5.5px);
-    margin-bottom: 20px; /* Add padding for spacing */
+    margin-bottom: 20px;
+    /* Add padding for spacing */
 
-    p{
+    p {
       @include paragraphs-regular-regular();
       color: $white;
       line-height: 200%;
@@ -355,13 +377,15 @@
       }
     }
 
-    img{
+    img {
       height: 40px;
       width: auto;
     }
+
     @include tablet {
       margin-bottom: 80px;
     }
+
     @include mobile {
       margin-bottom: 22%;
       flex-direction: column;
