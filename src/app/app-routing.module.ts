@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { ProjectsComponent } from './projects/projects.component';
+// import { HomeComponent } from './home/home.component';
+// import { ProjectsComponent } from './projects/projects.component';
 
 
 const routes: Routes = [
 
-  // //Titles
+  //Titles
   // {
   //     path: '',
   //     component: HomeComponent,
@@ -20,7 +20,7 @@ const routes: Routes = [
   // },
 
   { path: '', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) }, 
-  { path: 'projects', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) }
+  { path: 'projects', loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule) },
 ];
 
 @NgModule({

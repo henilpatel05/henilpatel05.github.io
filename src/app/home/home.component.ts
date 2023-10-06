@@ -13,12 +13,13 @@ export class HomeComponent {
   faArrowRight = faArrowRight;
   // constructor(public router:Router) { }
 
-  constructor(public router:Router, private titleService: Title, private metaService: Meta) { }
+  constructor(public router:Router, private titleService: Title, private metaService: Meta, private meta: Meta) { }
 
   ngOnInit() {
     const pageTitle = 'Henil Kajavadra | Human Experience Designer';
     const metaDescription = 'I am a versatile UX Designer driving innovation through user-centered design & delivering accessible human experience.';
   
+    this.meta.addTag({ property: 'og:image', content: '../../assets/Tumbnail.jpg' });
     this.titleService.setTitle(pageTitle);
     this.metaService.updateTag({ name: 'description', content: metaDescription });
   }

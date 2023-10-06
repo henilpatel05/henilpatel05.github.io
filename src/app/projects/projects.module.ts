@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProjectsRoutingModule } from './projects-routing.module';
 import { ProjectsComponent } from './projects.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ProjectsComponent } from './projects.component';
   ],
   imports: [
     CommonModule,
-    ProjectsRoutingModule
-  ]
+    ProjectsRoutingModule,
+    FontAwesomeModule
+  ],
 })
 export class ProjectsModule { }
