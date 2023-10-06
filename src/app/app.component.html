@@ -5,24 +5,24 @@
         <img class="logo menu" src="../assets/logo.svg">
       </a>
       <ul class="menu">
-        <a href="#">
+        <!-- <a href="#">
           <li class="nav-item">
             <fa-icon [icon]="faFaceSmile" class="icon-color" [fixedWidth]="true"></fa-icon>
             <label class="nav-title">Me</label>
           </li>
-        </a>
-        <a href="#">
-          <li class="nav-item">
-            <fa-icon [icon]="faWindowRestore" class="icon-color" [fixedWidth]="true"></fa-icon>
-            <label class="nav-title">Projects</label>
-          </li>
-        </a>
-        <!-- <a [routerLink]="['projects']" routerLinkActive="router-link-active">
+        </a> -->
+        <!-- <a href="projects">
           <li class="nav-item">
             <fa-icon [icon]="faWindowRestore" class="icon-color" [fixedWidth]="true"></fa-icon>
             <label class="nav-title">Projects</label>
           </li>
         </a> -->
+        <a [routerLink]="['projects']" routerLinkActive="router-link-active">
+          <li class="nav-item">
+            <fa-icon [icon]="faWindowRestore" class="icon-color" [fixedWidth]="true"></fa-icon>
+            <label class="nav-title">Projects</label>
+          </li>
+        </a>
         <a href="https://1drv.ms/w/s!AnXbp_r28-6hjQT1-GI4ztUiY1pQ" target="_blank">
           <li class="nav-item">
             <fa-icon [icon]="faFileLines" class="icon-color" [fixedWidth]="true"></fa-icon>
@@ -52,7 +52,29 @@
     </nav>
   </div>
 </header>
+
+<!-- Page Body -->
 <div>
   <router-outlet></router-outlet>
 </div>
-<footer></footer>
+
+<!--Footer section  -->
+<section class="footer">
+  <div class="footer-content">
+    <div class="footer-cta">
+      <p class="pre-title center">
+        Interested to work with me?
+      </p>
+      <a href="mailto:henilpatel0606@gmail.com" class="cta-title center">
+        Get in Touch.
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottombar">
+    <p>
+      © 2023 No rights reserved. Actually, share, steal (like a pro) and get inspiration as much as you want. We live in
+      a free world. 🌎️ <br> Henil Kajavadra - UX Designer based in Birmingham, UK. Now seeking opportunity.
+    </p>
+    <img src="../../assets/logo.svg">
+  </div>
+</section>

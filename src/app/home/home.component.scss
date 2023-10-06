@@ -115,6 +115,7 @@
   // margin: 72px 0px 72px 0px;
   padding-top: 72px;
   padding-bottom: 72px;
+  
 
   @include mobile {
     flex-direction: column;
@@ -124,6 +125,12 @@
   @include tablet {
     flex-direction: column;
     gap: 48px;
+  }
+
+  .projects-header{
+    @include heading-h4();
+    color: $white;
+    margin-bottom: -40px !important;
   }
 
   .project-item {
@@ -198,8 +205,116 @@
   }
 }
 
+//recent-projects starts from here...
+.recent-projects {
+  background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center;
+  background-color: $dark-background;
+  background-size: cover;
+  mix-blend-mode: screen;
+  height: 100vh;
+  // padding: 20vh 0 0 10vw !important;
+  padding-top: 20vh;
+  padding-right: 0 !important;
 
+  @include mobile {
+    padding-top: 8vh;
+    padding-right: 4vw !important;
+    padding-bottom: 8vh;
+    height: auto;
+  }
 
+  .recent-projects-header{
+    @include heading-h3();
+    color: $white;
+  }
+
+  .slider {
+    display: flex;
+    gap: 24px;
+    scroll-snap-type: x mandatory;
+    padding-right: 24px;
+    // overflow-x: scroll;
+    overflow-y: hidden; /* Hide vertical scroll */
+    -webkit-overflow-scrolling: touch;
+
+    @include mobile {
+     flex-direction: column;
+     padding-right: 0;
+    }
+
+    .project-card {
+      width: 40%;
+      height: 56vh;
+      margin-right: 6px;
+      border-radius: 16px;
+      text-align: center;
+      // scroll-snap-align: start;
+      position: relative;
+      transition: transform 0.2s;
+      text-decoration: none;
+      flex-shrink: 0;
+      overflow: hidden;
+
+      @include mobile {
+        width: auto;
+        height: 30vh;
+        margin: 0 0 0 0 !important;
+      }
+    
+      @include tablet {
+        width: 80vw;
+        height: 40vh;
+      }
+
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+    .card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #212529BF;
+      color: $white;
+      padding: 8px;
+      border-radius: 16px;
+      // opacity: 0; /* Start with opacity set to 0 (completely transparent) */
+      // transition: opacity 0.2s;
+      transform: translateY(100%);
+      transition: transform 0.2s;
+      transition: transform 0.2s, height 0.2s;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+  
+      p {
+        @include heading-h4();
+      }
+    }
+  }
+
+  .project-card:last-child {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  // .project-card:last-child .card-overlay {
+  //   width: 50%;
+  // }
+
+  .project-card:hover .card-overlay {
+    transform: translateY(0);
+    // opacity: 1; /* Change opacity to 1 (fully visible) on hover */
+  }
+}
+
+//recent-projects ends from here...
 
 
 // //Reviews section starts from here...
@@ -220,6 +335,7 @@
     @include mobile {
       max-width: 100%;
     }
+
     @include tablet {
       max-width: 100%;
     }
@@ -230,6 +346,7 @@
     @include mobile {
       max-width: 100%;
     }
+
     @include tablet {
       max-width: 100%;
     }
@@ -241,7 +358,8 @@
       height: 25%;
       transform: scaleY(-1);
       right: 30%;
-      top: 8%; /* Adjust the top offset as needed */
+      top: 8%;
+      /* Adjust the top offset as needed */
 
       @include tablet {
         width: auto;
@@ -261,7 +379,7 @@
     .testimonial {
       width: 80%;
       float: left;
-      
+
       @include tablet {
         width: 100%;
       }
@@ -269,7 +387,7 @@
       @include mobile {
         width: 100%;
         overflow-wrap: normal;
-       }
+      }
 
       .review-header {
         color: $gray-900;
@@ -292,133 +410,27 @@
               border-radius: 192px;
             }
           }
+
           @include mobile {
             display: none;
-           }
+          }
         }
 
         .client-review {
           @include paragraphs-large();
           color: $gray-900
         }
-    
+
         .client-name {
           @include heading-h5();
           color: black;
         }
-    
+
         .client-role {
           @include paragraphs-medium-regular();
           color: $gray-600;
         }
       }
-    }
-  }
-}
-
-
-//Footer styles
-
-.footer {
-  background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center;
-  /* Set the path to your background image */
-  background-color: $dark-background;
-  background-size: cover;
-  mix-blend-mode: screen;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  .footer-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .pre-title {
-    @include heading-h4();
-    color: $white;
-  }
-
-  .cta-title {
-    font-family: Gelasio;
-    font-size: 150px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 150%;
-    color: $gray-600;
-    text-decoration: none;
-    position: relative;
-
-    @include mobile {
-      font-size: 48px;
-    }
-
-    @include tablet {
-      font-size: 80px;
-    }
-  }
-
-  a:hover {
-    color: $gray-100;
-  }
-
-  /* Animation for the line-through effect */
-  a::after {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 16px;
-    background-color: $gray-700;
-    bottom: 50%;
-    left: 0;
-    transition: width 0.3s ease-in-out;
-  }
-
-  a:hover::after {
-    width: 100%;
-  }
-
-  /*end of Animation for the line-through effect */
-
-  .footer-bottombar {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    padding: 16px 24px;
-    border-radius: 24px;
-    border: 2px solid rgba(255, 255, 255, 0.50);
-    background: rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(5.5px);
-    margin-bottom: 20px;
-    /* Add padding for spacing */
-
-    p {
-      @include paragraphs-regular-regular();
-      color: $white;
-      line-height: 200%;
-
-      @include mobile {
-        @include caption-small();
-      }
-    }
-
-    img {
-      height: 40px;
-      width: auto;
-    }
-
-    @include tablet {
-      margin-bottom: 80px;
-    }
-
-    @include mobile {
-      margin-bottom: 22%;
-      flex-direction: column;
     }
   }
 }
