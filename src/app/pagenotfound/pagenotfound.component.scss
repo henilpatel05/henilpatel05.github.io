@@ -1,0 +1,40 @@
+@import "../../styles.scss";
+
+.footer {
+    background: rgba(0, 0, 0, 0.5) url('../../assets/fog.png') no-repeat center center;
+    /* Set the path to your background image */
+    background-color: $dark-background;
+    background-size: cover;
+    mix-blend-mode: screen;
+    height: 100vh;
+    display: flex;
+    margin-top: -40px !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    .footer-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cta-title {
+      font-family: Gelasio;
+      font-size: 150px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+      color: $white;
+      text-decoration: none;
+      position: relative;
+  
+      @include mobile {
+        font-size: 48px;
+      }
+  
+      @include tablet {
+        font-size: 80px;
+      }
+    }
+  }

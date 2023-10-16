@@ -25,5 +25,8 @@ export class AppComponent {
   faArrowRight = faArrowRight;
 
   constructor(public router:Router) { }
-
+  shouldShowFooter() {
+    // Replace '/specific-url' with the actual specific URL you want to show the footer on.
+    return this.router.url === '/projects' || this.router.url === '/';
+  }
 }
